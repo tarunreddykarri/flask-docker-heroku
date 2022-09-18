@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+
+<div class="bg"></div>
+
+<div class="login-box">
+  <h2>Predict Salary Analysis</h2>
+  <form action="{{ url_for('predict') }}" method="post">
+    <div class="user-box" method="post">
+      <input type="number" name="Experience" required="True">
+      <label>Experience</label>
+    </div>
+    <div class="user-box">
+      <input type="number" name="Test Score" required="True">
+      <label>Test Score(1-10)</label>
+    </div>
+    <div class = "user-box">
+      <input type="number" name="Interview Score" required="True">
+      <label>Interview Score(1-10)</label>
+    </div>
+
+    
+    <a href="#">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <button type="submit" class="btn">Predict</button>
+    </a>
+  </form>
+  
+  <br>
+  <br>
+  <p>{{ prediction_text }}</p>
+</div>
+<!-- partial -->
+  
+</body>
+</html>
